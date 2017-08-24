@@ -1,0 +1,78 @@
+# Write a method which accepts a string as an argument, and returns a string that only has repeating characters of the input string.
+#
+# For the purposes of this problem, uppercase and lowercase letters are considered to be the same character (e.g. 'A' is the same as 'a'). Whitespace can also be ignored.
+#
+# Example:
+#
+# nonunique_chars('Assignment')              # --> 'sn'
+# nonunique_chars('I saw a movie this week') # --> 'aeiw'
+
+# My first solution attempt:
+
+# def nonunique_chars(string)
+#   string = ''
+#   # string.each_char.to_a do |char|
+#   #   if char = #previously seen characters
+#     string.delete [''] & [''] #this does the same thing as attempted above
+#       return
+#     end
+#   end
+# end
+#
+# nonunique_chars.each do |string|
+# end
+
+
+def nonunique_chars(input)
+  input.downcase.delete(" \t\r\n")
+
+Hash.new(0)
+nonunique_chars.each { |c| char_tracker[c] += 1 }
+
+.select { |k,v| v > 1 }.keys.sort.join
+
+end
+end
+
+nonunique_chars('Assignment')
+nonunique_chars('I saw a movie this week')
+nonunique_chars("I\rsaw\ra\tmovie\tthis\nweek\n")
+
+
+#create a histogram
+
+#
+# The hard work of a census actually happens after all the data has been collected, as the data then has to be processed.
+#
+# Write a method which, when given a list of people, their birthdays, and their birth sex in the following format:
+#
+[
+  { name: 'Roseanne Gaudette',  birth_day: '3/8/2001',  birth_sex: 'F' },
+  { name: 'Janyce Beason',      birth_day: '4/12/1982', birth_sex: 'F' },
+  { name: 'Xue Mei',            birth_day: '5/11/1983', birth_sex: 'F' },
+  { name: 'Norberto Mauriello', birth_day: '1/2/1988',  birth_sex: 'M' }
+]
+
+def format(stats)
+
+end
+
+def analyze(input)
+
+  stats = Hash.new
+
+end
+
+format(stats)
+end
+
+analyze(data)
+
+
+# analyzes the data and outputs the following statistical information:
+#
+# 1980s: 3 births, 66% female, 34% male
+# 2000s: 1 births, 100% female, 0% male
+# The output should be ordered by the oldest decade first. Decades should not appear unless at least one person is born in that decade. The number of people in the input list can be arbitrarily long.
+#
+# You may write more than one method, if you feel the need to do so.
